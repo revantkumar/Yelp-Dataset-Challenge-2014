@@ -2,20 +2,16 @@ from nltk import WordNetLemmatizer
 from pymongo import MongoClient
 from nltk.corpus import stopwords
 import nltk
-
+import Constants
 __author__ = 'Parry'
 import os
 import time
 import json
 
-DATASET_FILE = '../yelp_dataset_challenge_academic_dataset-1/'
-MONGO_CONNECTION_STRING = "mongodb://localhost:27017/"
-REVIEWS_DATABASE = "Dataset_Challenge_Reviews"
-CORPUS_COLLECTION = "Corpus"
-REVIEWS_COLLECTION = "Reviews"
 
-corpus_collection = MongoClient(MONGO_CONNECTION_STRING)[REVIEWS_DATABASE][CORPUS_COLLECTION]
-reviews_collection = MongoClient(MONGO_CONNECTION_STRING)[REVIEWS_DATABASE][REVIEWS_COLLECTION]
+
+corpus_collection = MongoClient(Constants.MONGO_CONNECTION_STRING)[Constants.REVIEWS_DATABASE][Constants.CORPUS_COLLECTION]
+reviews_collection = MongoClient(Constants.MONGO_CONNECTION_STRING)[Constants.REVIEWS_DATABASE][Constants.REVIEWS_COLLECTION]
 
 stopset = set(stopwords.words('english'))
 

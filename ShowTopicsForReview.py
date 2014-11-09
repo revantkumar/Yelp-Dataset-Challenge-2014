@@ -3,26 +3,17 @@ from pymongo import MongoClient
 __author__ = 'Parry'
 from gensim.models import LdaModel
 from gensim import corpora
+import Constants
 
 
 
-dictionary_path = "DataModels/dictionary.dict"
-corpus_path = "DataModels/corpus.mm"
-lda_num_topics = 20
-lda_model_path = "DataModels/lda_model_topics.lda"
-
-DATASET_FILE = '../yelp_dataset_challenge_academic_dataset-1/'
-MONGO_CONNECTION_STRING = "mongodb://localhost:27017/"
-REVIEWS_DATABASE = "Dataset_Challenge_Reviews"
-CORPUS_COLLECTION = "Corpus"
-
-dictionary = corpora.Dictionary.load(dictionary_path)
-corpus = corpora.MmCorpus(corpus_path)
-lda = LdaModel.load(lda_model_path)
+dictionary = corpora.Dictionary.load(Constants.Dictionary_path)
+corpus = corpora.MmCorpus(Constants.Corpus_path)
+lda = LdaModel.load(Constants.Lda_model_path)
 
 
 
-corpus_collection = MongoClient(MONGO_CONNECTION_STRING)[REVIEWS_DATABASE][CORPUS_COLLECTION]
+corpus_collection = MongoClient(Constants.MONGO_CONNECTION_STRING)[Constants.REVIEWS_DATABASE][Constants.CORPUS_COLLECTION]
 
 i=0
 corpus_cursor = corpus_collection.find()

@@ -1,23 +1,36 @@
 import os
 import time
 import json
-
+from Constants import Parameters
 from pymongo import MongoClient
 
-DATASET_FILE = '../yelp_dataset_challenge_academic_dataset-1/'
-MONGO_CONNECTION_STRING = "mongodb://localhost:27017/"
-REVIEWS_DATABASE = "Dataset_Challenge_Reviews"
-REVIEWS_COLLECTION = "Reviews"
 
-reviews_collection = MongoClient(MONGO_CONNECTION_STRING)[REVIEWS_DATABASE][
-    REVIEWS_COLLECTION]
+reviews_collection = MongoClient(Parameters.MONGO_CONNECTION_STRING)[Parameters.REVIEWS_DATABASE][
+    Parameters.REVIEWS_COLLECTION]
 
-with open(DATASET_FILE +'review.json') as dataset:
+business_collection = MongoClient(Parameters.MONGO_CONNECTION_STRING)[Parameters.REVIEWS_DATABASE][
+    Parameters.BUSINESS_COLLECTION]
+
+
+with open(Parameters.DATASET_FILE +'yelp_academic_dataset_business.json') as dataset:
     for line in dataset:
 
             data = json.loads(line)
 
-            if data["type"] == "review":
+            if 'Restaurants' in data["categories"] and data['city'] == 'Las Vegas':
+                 business_collection.insert({
+                "_id": data["business_id"]
+
+                })
+
+
+with open(Parameters.DATASET_FILE +'yelp_academic_dataset_review.json') as dataset:
+    for line in dataset:
+
+            data = json.loads(line)
+            isRestaurant = business_collection.find({"_id": data["business_id"]}).count();
+
+            if data["type"] == "review" and isRestaurant !=0:
                  reviews_collection.insert({
                 "reviewId": data["review_id"],
                 "business": data["business_id"],
