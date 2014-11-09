@@ -22,9 +22,16 @@ stopset = set(stopwords.words('english'))
 lmtzr = WordNetLemmatizer()
 review_cursor = reviews_collection.find()
 print review_cursor.count()
-for review in review_cursor:
-    words = []
-    try :
+
+for i in range(review_cursor.count()):
+        try :
+             review =review_cursor.__getitem__(i)
+        except Exception:
+             print 'Exceptions..!!!!!!'
+             continue
+
+        words = []
+
         sentences = nltk.sent_tokenize(review['text'].lower())
         for sentence in sentences:
                 tokens = nltk.word_tokenize(sentence)
@@ -44,5 +51,3 @@ for review in review_cursor:
               "words": words
         })
 
-    except Exception:
-            print 'Exceptions..!!!!!!'
