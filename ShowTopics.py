@@ -3,14 +3,14 @@ from gensim.models import LdaModel
 from gensim import corpora
 
 
-import Constants
+from Constants import Parameters
 
 
-dictionary = corpora.Dictionary.load(Constants.Dictionary_path)
-corpus = corpora.MmCorpus(Constants.Corpus_path)
-lda = LdaModel.load(Constants.Lda_model_path)
+dictionary = corpora.Dictionary.load(Parameters.Dictionary_path)
+corpus = corpora.MmCorpus(Parameters.Corpus_path)
+lda = LdaModel.load(Parameters.Lda_model_path)
 
 i = 0
-for topic in lda.show_topics(num_topics=Constants.Lda_num_topics):
+for topic in lda.show_topics(num_topics=Parameters.Lda_num_topics):
     print '#' + str(i) + ': ' + topic
     i += 1

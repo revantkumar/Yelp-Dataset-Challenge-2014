@@ -6,11 +6,11 @@ from nltk.corpus import stopwords
 import nltk
 import gensim
 from gensim import corpora
-import Constants
+from Constants import Parameters
 
 
 
-corpus_collection = MongoClient(Constants.MONGO_CONNECTION_STRING)[Constants.REVIEWS_DATABASE][Constants.CORPUS_COLLECTION]
+corpus_collection = MongoClient(Parameters.MONGO_CONNECTION_STRING)[Parameters.REVIEWS_DATABASE][Parameters.CORPUS_COLLECTION]
 
 
 corpus_cursor = corpus_collection.find()
@@ -25,9 +25,9 @@ class MyCorpus(object):
 
 dictionary = corpora.Dictionary(review['words'] for review in corpus_cursor)
 dictionary.compactify()
-corpora.Dictionary.save(dictionary,Constants.Dictionary_path)
+corpora.Dictionary.save(dictionary,Parameters.Dictionary_path)
 corpus = MyCorpus()
-corpora.MmCorpus.serialize(Constants.Corpus_path,corpus)
+corpora.MmCorpus.serialize(Parameters.Corpus_path,corpus)
 
-lda = gensim.models.LdaModel(corpus, num_topics=Constants.Lda_num_topics, id2word=dictionary)
-lda.save(Constants.Lda_model_path)
+lda = gensim.models.LdaModel(corpus, num_topics=Parameters.Lda_num_topics, id2word=dictionary)
+lda.save(Parameters.Lda_model_path)

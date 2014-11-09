@@ -3,17 +3,17 @@ from pymongo import MongoClient
 __author__ = 'Parry'
 from gensim.models import LdaModel
 from gensim import corpora
-import Constants
+from Constants import Parameters
 
 
 
-dictionary = corpora.Dictionary.load(Constants.Dictionary_path)
-corpus = corpora.MmCorpus(Constants.Corpus_path)
-lda = LdaModel.load(Constants.Lda_model_path)
+dictionary = corpora.Dictionary.load(Parameters.Dictionary_path)
+corpus = corpora.MmCorpus(Parameters.Corpus_path)
+lda = LdaModel.load(Parameters.Lda_model_path)
 
 
 
-corpus_collection = MongoClient(Constants.MONGO_CONNECTION_STRING)[Constants.REVIEWS_DATABASE][Constants.CORPUS_COLLECTION]
+corpus_collection = MongoClient(Parameters.MONGO_CONNECTION_STRING)[Parameters.REVIEWS_DATABASE][Parameters.CORPUS_COLLECTION]
 
 i=0
 corpus_cursor = corpus_collection.find()

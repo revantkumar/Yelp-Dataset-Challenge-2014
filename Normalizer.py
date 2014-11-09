@@ -2,7 +2,7 @@ from nltk import WordNetLemmatizer
 from pymongo import MongoClient
 from nltk.corpus import stopwords
 import nltk
-import Constants
+from Constants import Parameters
 __author__ = 'Parry'
 import os
 import time
@@ -10,8 +10,9 @@ import json
 
 
 
-corpus_collection = MongoClient(Constants.MONGO_CONNECTION_STRING)[Constants.REVIEWS_DATABASE][Constants.CORPUS_COLLECTION]
-reviews_collection = MongoClient(Constants.MONGO_CONNECTION_STRING)[Constants.REVIEWS_DATABASE][Constants.REVIEWS_COLLECTION]
+corpus_collection = MongoClient(Parameters.MONGO_CONNECTION_STRING)[Parameters.REVIEWS_DATABASE][Parameters.CORPUS_COLLECTION]
+reviews_collection = MongoClient(Parameters.MONGO_CONNECTION_STRING)[Parameters.REVIEWS_DATABASE][Parameters.REVIEWS_COLLECTION]
+
 
 stopset = set(stopwords.words('english'))
 
