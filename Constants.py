@@ -9,7 +9,7 @@ class Parameters:
     REVIEWS_DATABASE = "Dataset_Challenge_Reviews"
     REVIEWS_COLLECTION = "Reviews"
     BUSINESS_COLLECTION = 'Business'
-
+    TOPIC_RATING_COLLECTION ='TopicRating'
     CORPUS_COLLECTION = "Corpus"
 
     Dictionary_path = "DataModels/dictionary.dict"
