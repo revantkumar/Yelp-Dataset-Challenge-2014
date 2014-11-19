@@ -8,7 +8,7 @@ from Constants import Parameters
 
 
 dictionary = corpora.Dictionary.load(Parameters.Dictionary_path)
-corpus = corpora.MmCorpus(Parameters.Corpus_path)
+corpus = corpora.BleiCorpus(Parameters.Corpus_path)
 lda = LdaModel.load(Parameters.Lda_model_path)
 
 

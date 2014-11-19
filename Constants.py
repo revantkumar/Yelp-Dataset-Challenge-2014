@@ -14,5 +14,5 @@ class Parameters:
 
     Dictionary_path = "DataModels/dictionary.dict"
     Corpus_path = "DataModels/corpus.mm"
-    Lda_num_topics = 20
+    Lda_num_topics = 60
     Lda_model_path = "DataModels/lda_model_topics.lda"

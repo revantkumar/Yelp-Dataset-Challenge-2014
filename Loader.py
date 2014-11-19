@@ -17,11 +17,10 @@ with open(Parameters.DATASET_FILE +'yelp_academic_dataset_business.json') as dat
 
             data = json.loads(line)
 
-            if 'Restaurants' in data["categories"] and data['city'] == 'Las Vegas':
-                 business_collection.insert({
-                "_id": data["business_id"]
-
-                })
+            if 'Restaurants' in data["categories"] and data['city'] == 'Phoenix':
+               business_collection.insert({
+                 "_id": data["business_id"]
+               })
 
 
 with open(Parameters.DATASET_FILE +'yelp_academic_dataset_review.json') as dataset:
@@ -30,7 +29,7 @@ with open(Parameters.DATASET_FILE +'yelp_academic_dataset_review.json') as datas
             data = json.loads(line)
             isRestaurant = business_collection.find({"_id": data["business_id"]}).count();
 
-            if data["type"] == "review" and isRestaurant !=0:
+            if data["type"] == "review"   and isRestaurant !=0:
                  reviews_collection.insert({
                 "reviewId": data["review_id"],
                 "business": data["business_id"],
