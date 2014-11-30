@@ -11,6 +11,7 @@ class Parameters:
     BUSINESS_COLLECTION = 'Business'
     TOPIC_RATING_COLLECTION ='TopicRating'
     CORPUS_COLLECTION = "Corpus"
+    BUSINESS_INFO_COLLECTION ="BusinessInfo"
 
     Dictionary_path = "DataModels/dictionary.dict"
     Corpus_path = "DataModels/corpus.mm"
