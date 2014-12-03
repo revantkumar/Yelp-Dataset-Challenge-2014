@@ -20,7 +20,7 @@
     </style>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
     <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7Tdqv6u-Gp2ScDMgT44hAdL80ACi6HhM">
+      src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization">
     </script>
     <script type="text/javascript">
      var styles = [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
@@ -31,15 +31,15 @@
           zoom: 10,
           styles : styles
         };
-        var map = new google.maps.Map(document.getElementById('map-canvas'),
+         map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
 
 		var image = 'circle_1.png'
-       var marker = new google.maps.Marker({
+        /*   var marker = new google.maps.Marker({
       position: myVar,
       map: map,
 	  icon: image
-  });
+  }); */
 	  }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
@@ -51,9 +51,21 @@
             var val = $('#topic-dropdown').val();
             var rating = $('#rating').val()
             console.log(val);
+            var pts = []
             $.getJSON('/getBusiness?topic_id='+val+'&rating='+rating, function(json){
-                console.log(json)
+                for(i in json){
+                    pts.push(new google.maps.LatLng(json[i].lat, json[i].lon));
+                }
+                console.log(pts);
+                var pointArray = new google.maps.MVCArray(pts);
+                var heatmap = new google.maps.visualization.HeatmapLayer({
+                    data: pointArray
+                });
+                heatmap.setMap(map);
             })
+           // var pointArray = new google.maps.MVCArray(pts);
+           // var heatmap = new google.maps.visualization.HeatmapLayer({ data : pointArray })
+           // heatmap.set(map);
         })
     })
     </script>
