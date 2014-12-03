@@ -5,8 +5,8 @@
       * { font-family :Arial }
       html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
       #menu-wrapper{
-        width : 150px;
-        height: 150px;
+        width : 270px;
+        height: 180px;
         position: absolute;
         bottom:100px;
         left:50px;
@@ -49,8 +49,9 @@
         $('#topic-form').on('submit', function(e){
             e.preventDefault();
             var val = $('#topic-dropdown').val();
+            var rating = $('#rating').val()
             console.log(val);
-            $.getJSON('/getBusiness?topic_id='+val, function(json){
+            $.getJSON('/getBusiness?topic_id='+val+'&rating='+rating, function(json){
                 console.log(json)
             })
         })
@@ -60,7 +61,7 @@
   <body>
     <div id="menu-wrapper"> 
         <strong> Yelpolo </strong>
-        <form class="pure-form" id="topic-form">
+        <form class="pure-form pure-form-stacked" id="topic-form">
             <fieldset>
                 <legend>Select Topic:</legend>
                 <select name="topic" id="topic-dropdown">
@@ -125,7 +126,8 @@
 <option value="58">Mexican Food</option>
 <option value="59">Promptness in Service</option>
                 </select>
-                <input type="submit" class="pure-button pure-button-primary">
+                <legend for="rating">Rating</legend><input type="range" min="1" max="5" id="rating">
+                <br><input type="submit" class="pure-button pure-button-primary">
             </fieldset>
         </form>
         
