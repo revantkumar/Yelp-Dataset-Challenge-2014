@@ -2,17 +2,34 @@
 <html>
   <head>
     <style type="text/css">
+      * { font-family :Arial }
       html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+      #menu-wrapper{
+        width : 150px;
+        height: 150px;
+        position: absolute;
+        bottom:100px;
+        left:50px;
+        background:#fff;
+        padding: 20px;  
+        z-index:100;
+        -webkit-box-shadow: -2px -2px 34px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: -2px -2px 34px 0px rgba(0,0,0,0.75);
+        box-shadow: -2px -2px 34px 0px rgba(0,0,0,0.75);
+      }
     </style>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7Tdqv6u-Gp2ScDMgT44hAdL80ACi6HhM">
     </script>
     <script type="text/javascript">
+     var styles = [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
       function initialize() {
 	  var myVar = new google.maps.LatLng(33.4483333,-112.0733333)
         var mapOptions = {
           center: myVar,
-          zoom: 10
+          zoom: 10,
+          styles : styles
         };
         var map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
@@ -28,6 +45,19 @@
     </script>
   </head>
   <body>
-<div id="map-canvas"></div>
+    <div id="menu-wrapper"> 
+        <strong> Yelpolo </strong>
+        <form class="pure-form">
+            <fieldset>
+                <legend>Select Topic:</legend>
+                <select name="topic">
+                    <option value="0">Topic</option>
+                </select>
+                <input type="submit" class="pure-button pure-button-primary">
+            </fieldset>
+        </form>
+        
+    </div>
+    <div id="map-canvas"></div>
   </body>
 </html>
