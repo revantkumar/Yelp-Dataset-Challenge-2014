@@ -1,0 +1,60 @@
+#0: Ambience or Service or Staff
+#1: Food
+#2: Food or Italian Food
+#3: Food or Sides
+#4: Dessert
+#5: Breakfast
+#6: Food or Price
+#7: Atmosphere
+#8: Snack or Smoking
+#9: Thai Food
+#10: Food
+#11: Beverages
+#12: Food or Italian Food
+#13: Food or Location
+#14: Food or Snacks
+#15: Locality
+#16: Dining Place
+#17: Variety
+#18: Chinese
+#19: Tequila and Bar
+#20: Mexican Food
+#21: Hot Dogs and Burgers
+#22: Variety
+#23: Bar
+#24: Couple Place/Dining
+#25: Turkey & BBQ
+#26: Price
+#27: Hygiene
+#28: Service
+#29: Fast-Food
+#30: Food
+#31: Service
+#32: Italian Food
+#33: Beverages
+#34: Italian Food
+#35: Location
+#36: Breakfast or Cafe
+#37: Food or Sandwich
+#38: Food or Take-out
+#39: Food
+#40: Food or Vegan
+#41: Breakfast
+#42: Bar or Beverages
+#43: Ambience or Service
+#44: Group/Team Outing
+#45: Spanish Food
+#46: Parking
+#47: Family
+#48: Wait Time and Management
+#49: Lunch Buffet
+#50: Lounge
+#51: View of City
+#52: Homemade Food
+#53: Management
+#54: Ambience
+#55: BreakFast
+#56: Located in Mall
+#57: Ambience and Fun
+#58: Mexican Food
+#59: Promptness in Service
