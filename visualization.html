@@ -43,15 +43,87 @@
 	  }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+    $(function(){
+        $('#topic-form').on('submit', function(e){
+            e.preventDefault();
+            var val = $('#topic-dropdown').val();
+            console.log(val);
+            $.getJSON('/getBusiness?topic_id='+val, function(json){
+                console.log(json)
+            })
+        })
+    })
+    </script>
   </head>
   <body>
     <div id="menu-wrapper"> 
         <strong> Yelpolo </strong>
-        <form class="pure-form">
+        <form class="pure-form" id="topic-form">
             <fieldset>
                 <legend>Select Topic:</legend>
-                <select name="topic">
-                    <option value="0">Topic</option>
+                <select name="topic" id="topic-dropdown">
+                    <option value="0">Ambience or Service or Staff</option>
+<option value="1">Food</option>
+<option value="2">Food or Italian Food</option>
+<option value="3">Food or Sides</option>
+<option value="4">Dessert</option>
+<option value="5">Breakfast</option>
+<option value="6">Food or Price</option>
+<option value="7">Atmosphere</option>
+<option value="8">Snack or Smoking</option>
+<option value="9">Thai Food</option>
+<option value="10">Food</option>
+<option value="11">Beverages</option>
+<option value="12">Food or Italian Food</option>
+<option value="13">Food or Location</option>
+<option value="14">Food or Snacks</option>
+<option value="15">Locality</option>
+<option value="16">Dining Place</option>
+<option value="17">Variety</option>
+<option value="18">Chinese</option>
+<option value="19">Tequila and Bar</option>
+<option value="20">Mexican Food</option>
+<option value="21">Hot Dogs and Burgers</option>
+<option value="22">Variety</option>
+<option value="23">Bar</option>
+<option value="24">Couple Place/Dining</option>
+<option value="25">Turkey & BBQ</option>
+<option value="26">Price</option>
+<option value="27">Hygiene</option>
+<option value="28">Service</option>
+<option value="29">Fast-Food</option>
+<option value="30">Food</option>
+<option value="31">Service</option>
+<option value="32">Italian Food</option>
+<option value="33">Beverages</option>
+<option value="34">Italian Food</option>
+<option value="35">Location</option>
+<option value="36">Breakfast or Cafe</option>
+<option value="37">Food or Sandwich</option>
+<option value="38">Food or Take-out</option>
+<option value="39">Food</option>
+<option value="40">Food or Vegan</option>
+<option value="41">Breakfast</option>
+<option value="42">Bar or Beverages</option>
+<option value="43">Ambience or Service</option>
+<option value="44">Group/Team Outing</option>
+<option value="45">Spanish Food</option>
+<option value="46">Parking</option>
+<option value="47">Family</option>
+<option value="48">Wait Time and Management</option>
+<option value="49">Lunch Buffet</option>
+<option value="50">Lounge</option>
+<option value="51">View of City</option>
+<option value="52">Homemade Food</option>
+<option value="53">Management</option>
+<option value="54">Ambience</option>
+<option value="55">BreakFast</option>
+<option value="56">Located in Mall</option>
+<option value="57">Ambience and Fun</option>
+<option value="58">Mexican Food</option>
+<option value="59">Promptness in Service</option>
                 </select>
                 <input type="submit" class="pure-button pure-button-primary">
             </fieldset>
