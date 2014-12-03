@@ -29,6 +29,6 @@ def getBest(num):
     #print count.most_common(5)
     for id in count.most_common(num):
         res[id[0]] = (id[1],ave[id[0]])
-    return res
+    print res
 
 getBest(10)

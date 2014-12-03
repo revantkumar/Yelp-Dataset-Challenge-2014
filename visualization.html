@@ -46,19 +46,22 @@
     <script src="http://code.jquery.com/jquery.min.js"></script>
     <script>
     $(function(){
+        var heatmap;
         $('#topic-form').on('submit', function(e){
             e.preventDefault();
             var val = $('#topic-dropdown').val();
             var rating = $('#rating').val()
             console.log(val);
             var pts = []
+            if(typeof heatmap !== "undefined")
+                heatmap.setMap(null);
             $.getJSON('/getBusiness?topic_id='+val+'&rating='+rating, function(json){
                 for(i in json){
                     pts.push(new google.maps.LatLng(json[i].lat, json[i].lon));
                 }
                 console.log(pts);
                 var pointArray = new google.maps.MVCArray(pts);
-                var heatmap = new google.maps.visualization.HeatmapLayer({
+                heatmap = new google.maps.visualization.HeatmapLayer({
                     data: pointArray
                 });
                 heatmap.setMap(map);
