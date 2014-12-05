@@ -1,0 +1,23 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Proposed Method}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Data Collection and Normalization}{section.2}% 3
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Pre Processing of Data}{subsection.2.1}% 4
+\BOOKMARK [2][-]{subsection.2.2}{Online LDA}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.3}{Latent Topic Rating}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.4}{Evaluation}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.5}{Development of Graphical User Interface}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.6}{Instructions to Use our Software}{section.2}% 9
+\BOOKMARK [1][-]{section.3}{Technology Stack}{}% 10
+\BOOKMARK [1][-]{section.4}{List of innovations}{}% 11
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 12
+\BOOKMARK [1][-]{section.6}{Appendix}{}% 13
+\BOOKMARK [2][-]{subsection.6.1}{Appendix A: Plan of Activities}{section.6}% 14
+\BOOKMARK [2][-]{subsection.6.2}{Appendix B: Distribution of team member effort}{section.6}% 15
+\BOOKMARK [2][-]{subsection.6.3}{Appendix B: Survey with Categories}{section.6}% 16
+\BOOKMARK [3][-]{subsubsection.6.3.1}{Topic Modeling}{subsection.6.3}% 17
+\BOOKMARK [3][-]{subsubsection.6.3.2}{Rating Prediction}{subsection.6.3}% 18
+\BOOKMARK [3][-]{subsubsection.6.3.3}{Yelp Reviews}{subsection.6.3}% 19
+\BOOKMARK [3][-]{subsubsection.6.3.4}{UI Design}{subsection.6.3}% 20
+\BOOKMARK [3][-]{subsubsection.6.3.5}{Fake Detection}{subsection.6.3}% 21
+\BOOKMARK [3][-]{subsubsection.6.3.6}{Recommendations}{subsection.6.3}% 22
+\BOOKMARK [1][-]{section.7}{References}{}% 23
