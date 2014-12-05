@@ -45,7 +45,7 @@ The first problem is that these features are not explicitly provided in the avai
 
 We plan to start with one city and once we are able to get some useful results, we plan to extend it across 3-4 cities. We will develop the UI for this analysis which would basically be geospatial based and would help prospective businessmen to analyze the regions and which regions match to what services they can offer.
 
-\section{Proposed Method}
+\section{Proposed Method/ Implementation}
 
 \subsection{Data Collection and Normalization}
 
@@ -119,7 +119,7 @@ Thus, the above algorithm gave us the Latent Topics of all the Businesses. As, e
 %\item In the next approach we will use Multi Aspect Semantic Analysis in order to obtain individual ratings for the Hidden SubTopics in the Review
 %\end{itemize}
 
-\subsection{Evaluation}
+\section{Evaluation/Experiments}
 
 Our software is live and hosted on \href{http://a.ashwinikhare.in:8030/yelpolo}{http://a.ashwinikhare.in:8030/yelpolo}. 
 
@@ -175,6 +175,16 @@ For example:
 	This example demonstrates that some noise words can also become part of the topic.
 	\end{itemize}
 
+\subsection{Experimentations}
+\paragraph{Number of SubTopics}
+We did some Experimentations with the number of topics that can be extracted. We saw that when we used around 20-30 topics, which was our earlier anticipation based on data, we found that lot of Subtopics were clustered together. As an example, similar to previous example, we found that this type of combination was present in all the subtopics. \\
+When we increased the number of subtopics to 90 - 100, we got reverse results, that is same subtopic was coming at many places. Example : We saw that Mexican food was coming at around 7 - 8 instances. \\
+60-70 gave us decent results where we struck a balance between the above two issues.\\ [.15cm]
+
+\paragraph {Part of Speech of Words}
+In order to evaluate Subtopics, we had use a subset of words from the review as not all words contributed towards the review. \\
+We did  all the permutations and our conclusion is that Verbs , Adverbs and to some extent Adjectives don't contribute towards finding latent topics. In fact, using them created lot of noise in the subtopics which we obtained. \\
+After all the analysis, we decided and used just Nouns (Proper and Common) as these are the words that describe the type of Subtopics {Subject} , rest just provide elaboration on these subjects.\\
 
 \end{itemize}
 
@@ -257,7 +267,10 @@ Thus, in conclusion, we have successfully analyzed the Yelp Dataset to obtain to
 
 Thus, we believe that our software can help the potential businessmen to find the places where the success of opening their business has a higher probability as compared to the other regions of the city. 
 
-For the future work, we feel that the latent topic ratings can be improved by using Multi-Aspect Sentiment Analysis. Also, this approach can also be used to find similarity between business based on latent topics. Thus, the input matrix could be fed into any clustering algorithm to find the business which provide similar type of subtopics.
+For the future work, we feel that the latent topic ratings can be improved by using Multi-Aspect Sentiment Analysis. 
+Also, this approach can be extended and  be used to find similarity between business based on latent topics. Currently, we have Business with some Latent Topic. Thus, this input matrix could be fed into any clustering algorithm to find the business which provide similar type of subtopics.
+
+Similar to this approach, instead of commingling reviews for business, we can combine reviews for user. This will give us taste of people and thus , we can cluster similar users. This similar users can later be used to provide recommendations based on User Similarity.
 
 \section{Appendix}
 
