@@ -2,32 +2,151 @@
 <html>
   <head>
     <style type="text/css">
+      * { font-family :Arial }
       html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+      #menu-wrapper{
+        width : 270px;
+        height: 180px;
+        position: absolute;
+        bottom:100px;
+        left:50px;
+        background:#fff;
+        padding: 20px;  
+        z-index:100;
+        -webkit-box-shadow: -2px -2px 34px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: -2px -2px 34px 0px rgba(0,0,0,0.75);
+        box-shadow: -2px -2px 34px 0px rgba(0,0,0,0.75);
+      }
     </style>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
     <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7Tdqv6u-Gp2ScDMgT44hAdL80ACi6HhM">
+      src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization">
     </script>
     <script type="text/javascript">
+     var styles = [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
       function initialize() {
 	  var myVar = new google.maps.LatLng(33.4483333,-112.0733333)
         var mapOptions = {
           center: myVar,
-          zoom: 10
+          zoom: 10,
+          styles : styles
         };
-        var map = new google.maps.Map(document.getElementById('map-canvas'),
+         map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
 
 		var image = 'circle_1.png'
-       var marker = new google.maps.Marker({
+        /*   var marker = new google.maps.Marker({
       position: myVar,
       map: map,
 	  icon: image
-  });
+  }); */
 	  }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+    $(function(){
+        var heatmap;
+        $('#topic-form').on('submit', function(e){
+            e.preventDefault();
+            var val = $('#topic-dropdown').val();
+            var rating = $('#rating').val()
+            console.log(val);
+            var pts = []
+            if(typeof heatmap !== "undefined")
+                heatmap.setMap(null);
+            $.getJSON('/getBusiness?topic_id='+val+'&rating='+rating, function(json){
+                for(i in json){
+                    pts.push(new google.maps.LatLng(json[i].lat, json[i].lon));
+                }
+                console.log(pts);
+                var pointArray = new google.maps.MVCArray(pts);
+                heatmap = new google.maps.visualization.HeatmapLayer({
+                    data: pointArray
+                });
+                heatmap.setMap(map);
+            })
+           // var pointArray = new google.maps.MVCArray(pts);
+           // var heatmap = new google.maps.visualization.HeatmapLayer({ data : pointArray })
+           // heatmap.set(map);
+        })
+    })
+    </script>
   </head>
   <body>
-<div id="map-canvas"></div>
+    <div id="menu-wrapper"> 
+        <strong> Yelpolo </strong>
+        <form class="pure-form pure-form-stacked" id="topic-form">
+            <fieldset>
+                <legend>Select Topic:</legend>
+                <select name="topic" id="topic-dropdown">
+                    <option value="0">Ambience or Service or Staff</option>
+<option value="1">Food</option>
+<option value="2">Food or Italian Food</option>
+<option value="3">Food or Sides</option>
+<option value="4">Dessert</option>
+<option value="5">Breakfast</option>
+<option value="6">Food or Price</option>
+<option value="7">Atmosphere</option>
+<option value="8">Snack or Smoking</option>
+<option value="9">Thai Food</option>
+<option value="10">Food</option>
+<option value="11">Beverages</option>
+<option value="12">Food or Italian Food</option>
+<option value="13">Food or Location</option>
+<option value="14">Food or Snacks</option>
+<option value="15">Locality</option>
+<option value="16">Dining Place</option>
+<option value="17">Variety</option>
+<option value="18">Chinese</option>
+<option value="19">Tequila and Bar</option>
+<option value="20">Mexican Food</option>
+<option value="21">Hot Dogs and Burgers</option>
+<option value="22">Variety</option>
+<option value="23">Bar</option>
+<option value="24">Couple Place/Dining</option>
+<option value="25">Turkey & BBQ</option>
+<option value="26">Price</option>
+<option value="27">Hygiene</option>
+<option value="28">Service</option>
+<option value="29">Fast-Food</option>
+<option value="30">Food</option>
+<option value="31">Service</option>
+<option value="32">Italian Food</option>
+<option value="33">Beverages</option>
+<option value="34">Italian Food</option>
+<option value="35">Location</option>
+<option value="36">Breakfast or Cafe</option>
+<option value="37">Food or Sandwich</option>
+<option value="38">Food or Take-out</option>
+<option value="39">Food</option>
+<option value="40">Food or Vegan</option>
+<option value="41">Breakfast</option>
+<option value="42">Bar or Beverages</option>
+<option value="43">Ambience or Service</option>
+<option value="44">Group/Team Outing</option>
+<option value="45">Spanish Food</option>
+<option value="46">Parking</option>
+<option value="47">Family</option>
+<option value="48">Wait Time and Management</option>
+<option value="49">Lunch Buffet</option>
+<option value="50">Lounge</option>
+<option value="51">View of City</option>
+<option value="52">Homemade Food</option>
+<option value="53">Management</option>
+<option value="54">Ambience</option>
+<option value="55">BreakFast</option>
+<option value="56">Located in Mall</option>
+<option value="57">Ambience and Fun</option>
+<option value="58">Mexican Food</option>
+<option value="59">Promptness in Service</option>
+                </select>
+                <legend for="rating">Rating</legend><input type="range" min="1" max="5" id="rating">
+                <br><input type="submit" class="pure-button pure-button-primary">
+            </fieldset>
+        </form>
+        
+    </div>
+    <div id="map-canvas"></div>
   </body>
 </html>
