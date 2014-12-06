@@ -204,6 +204,26 @@ After all the analysis, we decided and used just Nouns (Proper and Common) as th
 \end{center}
 \end{figure}
 
+\subsection{Testbed : List of questions prepared to answer}
+We used the Yelp dataset as our testbed to run our experiments. Specifically, we used the restaurant data for the location of Phoenix, Arizona since it had a rich variety of reviews and a wealth of data for the kind of problems we were interested in solving. The information about restaurants is available on Yelp.\\
+We wanted to find the potential areas where a restaurant owner could start a potential and profitable business venture.\\
+
+Some Questions that can be answered.\\
+\begin{itemize}
+\item Which is the best place an entrepreneur X can open a business provided he provides a great feature Y?
+	\begin{itemize}
+		\item E.g: Where is the best place an entrepreneur can open a Mexican restaurant in Phoenix AZ?
+	\end{itemize}
+\item Which is the location with the best rating of feature Y?
+	\begin{itemize}
+		\item E.g: Which is the location in Las Vegas with the best rating for ambience?
+	\end{itemize}
+\item Which is the location with the worst rated service Y that will help a business offering Y be a sure shot success?
+	\begin{itemize}
+		\item E.g: Which is the location in New York City with the worst rated customer service that would help the business Chef on Wheels be a sure shot success ?
+	\end{itemize}
+\end{itemize}
+
 \subsection{Development of Graphical User Interface}
 
 The graphical user interface is developed using HTML5, CSS3, \& Google Maps API. We have used the heatmaps to visual the regions based of the topics and their ratings. The regions which are shown in red color correspond to the places which the higher occurrence of that selected rating for the topic. The interactions of user is handled using Javascript and a server is sending JSON responses as per user selected filters. 

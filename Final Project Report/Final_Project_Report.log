@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  5 DEC 2014 17:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  5 DEC 2014 21:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -295,7 +295,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 38.
 
-<review.png, id=100, 451.6875pt x 209.78375pt>
+<review.png, id=4, 451.6875pt x 209.78375pt>
 File: review.png Graphic file (type png)
  <use review.png>
 Package pdftex.def Info: review.png used on input line 56.
@@ -304,7 +304,7 @@ Package pdftex.def Info: review.png used on input line 56.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<business.png, id=101, 612.2875pt x 503.8825pt>
+<business.png, id=5, 612.2875pt x 503.8825pt>
 File: business.png Graphic file (type png)
  <use business.png>
 Package pdftex.def Info: business.png used on input line 62.
@@ -316,7 +316,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<data2.png, id=109, 1242.6425pt x 666.49pt>
+<data2.png, id=17, 1242.6425pt x 666.49pt>
 File: data2.png Graphic file (type png)
  <use data2.png>
 Package pdftex.def Info: data2.png used on input line 78.
@@ -335,8 +335,8 @@ File: omsptm.fd
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 88.
- [2 <./review.png> <./business.png>] <yelp_2.png, id=116, 962.59625pt x 596.227
-5pt>
+ [2 <./review.png> <./business.png>] <yelp_2.png, id=25, 962.59625pt x 596.2275
+pt>
 File: yelp_2.png Graphic file (type png)
 
 <use yelp_2.png>
@@ -365,7 +365,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 185--188
 
  []
 
-<eval.jpg, id=127, 499.8675pt x 347.2975pt>
+<eval.jpg, id=38, 499.8675pt x 347.2975pt>
 File: eval.jpg Graphic file (type jpg)
  <use eval.jpg>
 Package pdftex.def Info: eval.jpg used on input line 193.
@@ -374,7 +374,7 @@ Package pdftex.def Info: eval.jpg used on input line 193.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[5] <wordle.png, id=134, 840.13875pt x 460.72125pt>
+[5] <wordle.png, id=46, 840.13875pt x 460.72125pt>
 File: wordle.png Graphic file (type png)
  <use wordle.png>
 Package pdftex.def Info: wordle.png used on input line 202.
@@ -384,45 +384,71 @@ Overfull \hbox (36.13501pt too wide) in paragraph at lines 202--203
  [] 
  []
 
-[6 <./eval.jpg> <./wordle.png>] <screen.png, id=142, 1158.3275pt x 628.3475pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--210
+
+ []
+
+[6 <./eval.jpg> <./wordle.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
+
+ []
+
+<screen.png, id=55, 1158.3275pt x 628.3475pt>
 File: screen.png Graphic file (type png)
-
-<use screen.png>
-Package pdftex.def Info: screen.png used on input line 217.
+ <use screen.png>
+Package pdftex.def Info: screen.png used on input line 237.
 (pdftex.def)             Requested size: 346.89621pt x 188.17012pt.
- <filter.png, id=143, 332.24126pt x 237.88875pt>
-File: filter.png Graphic file (type png)
 
-<use filter.png>
-Package pdftex.def Info: filter.png used on input line 226.
+<filter.png, id=56, 332.24126pt x 237.88875pt>
+File: filter.png Graphic file (type png)
+ <use filter.png>
+Package pdftex.def Info: filter.png used on input line 246.
 (pdftex.def)             Requested size: 346.89621pt x 248.39667pt.
- [7 <./screen.png> <./filter.png>] [8]
-<act.png, id=156, 581.17125pt x 527.9725pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7 <./screen.png>] [8 <./filter.png>]
+<act.png, id=72, 581.17125pt x 527.9725pt>
 File: act.png Graphic file (type png)
  <use act.png>
-Package pdftex.def Info: act.png used on input line 283.
+Package pdftex.def Info: act.png used on input line 303.
 (pdftex.def)             Requested size: 433.62pt x 393.93213pt.
 
-Overfull \hbox (36.13501pt too wide) in paragraph at lines 283--284
+Overfull \hbox (36.13501pt too wide) in paragraph at lines 303--304
  [] 
  []
 
-[9 <./act.png>] [10] [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 357.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10 <./act.png>] [11]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 377.
  [12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 357.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 377.
  (./Final_Project_Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 357.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 357.
-Package rerunfilecheck Info: File `Final_Project_Report.out' has not changed.
-(rerunfilecheck)             Checksum: 6D61DEFB5C3EB483DC2280FABC9143C0;1639.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 357.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 377.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 377.
+
+
+Package rerunfilecheck Warning: File `Final_Project_Report.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Final_Project_Report.out':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  86292A1F5750E06CE5DA885EF6BD0862;1735.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 377.
  ) 
 Here is how much of TeX's memory you used:
- 5804 strings out of 493117
- 85302 string characters out of 6135433
- 171640 words of memory out of 5000000
- 9160 multiletter control sequences out of 15000+600000
+ 5780 strings out of 493117
+ 84935 string characters out of 6135433
+ 171604 words of memory out of 5000000
+ 9135 multiletter control sequences out of 15000+600000
  11966 words of font info for 26 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,8n,39p,684b,380s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -430,10 +456,10 @@ Here is how much of TeX's memory you used:
 exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014
 /texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Final_Project_Report.pdf (12 pages, 823038 bytes).
+Output written on Final_Project_Report.pdf (12 pages, 822912 bytes).
 PDF statistics:
- 214 PDF objects out of 1000 (max. 8388607)
- 186 compressed objects within 2 object streams
- 57 named destinations out of 1000 (max. 500000)
- 238 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 142 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
+ 58 named destinations out of 1000 (max. 500000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
