@@ -2,7 +2,7 @@ Cheetah==2.4.4
 Landscape-Client==14.01
 MySQL-python==1.2.3
 PAM==0.4.2
-PyYAML==3.10
+PyYAML==5.4
 Twisted-Core==13.2.0
 apt-xapian-index==0.45
 argparse==1.2.1
